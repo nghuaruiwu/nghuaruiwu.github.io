@@ -22,22 +22,23 @@
     var CONFIG = {"hostname":"nghuaruiwu.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
-  <meta name="description" content="Github 设置 仓库名应为： [username].github.io 需确认git版本。由于所用git为1.9x版，在后续安装中费了不少时间  安装Node.js 官网下载直接安装： https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F; node -v; npm -v检测是否安装成功  Hexo 安装及命令 安装hexo 1npm install -g hexo-cli   初始化">
+  <meta name="description" content="数学变换(1) 勒让德变换数学变换在物理学中，经常使用数学变换来重新编码信息，如勒让德变换&#x2F;傅里叶变换&#x2F;拉普拉斯变换等。这些变换为人们提供了认识世界的新视角，为各类物理问题的处理提供了便利。本系列将分别介绍上述三种数学变换。本节将介绍勒让德变换(Legendre Transform). 勒让德变换的引入对于给定的函数$F(x)$，如果满足以下两个条件则可以通过勒让德变换提供更好的信息表达：(a)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+Github建站笔记">
-<meta property="og:url" content="https://nghuaruiwu.github.io/2020/08/22/CS/CS_Hexo+Github%E5%BB%BA%E7%AB%99%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:url" content="https://nghuaruiwu.github.io/2020/08/22/Math/%E6%95%B0%E5%AD%A6%E5%8F%98%E6%8D%A2(1)%20%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2/index.html">
 <meta property="og:site_name" content="Huarui&#39;Blog">
-<meta property="og:description" content="Github 设置 仓库名应为： [username].github.io 需确认git版本。由于所用git为1.9x版，在后续安装中费了不少时间  安装Node.js 官网下载直接安装： https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F; node -v; npm -v检测是否安装成功  Hexo 安装及命令 安装hexo 1npm install -g hexo-cli   初始化">
+<meta property="og:description" content="数学变换(1) 勒让德变换数学变换在物理学中，经常使用数学变换来重新编码信息，如勒让德变换&#x2F;傅里叶变换&#x2F;拉普拉斯变换等。这些变换为人们提供了认识世界的新视角，为各类物理问题的处理提供了便利。本系列将分别介绍上述三种数学变换。本节将介绍勒让德变换(Legendre Transform). 勒让德变换的引入对于给定的函数$F(x)$，如果满足以下两个条件则可以通过勒让德变换提供更好的信息表达：(a)">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/119952-740aa43a49994a05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="article:published_time" content="2020-08-22T08:26:59.000Z">
-<meta property="article:modified_time" content="2020-08-22T13:16:02.324Z">
+<meta property="article:modified_time" content="2020-08-22T13:39:10.468Z">
 <meta property="article:author" content="Huarui Wu">
-<meta property="article:tag" content="web">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="数学变换">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/119952-740aa43a49994a05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
-<link rel="canonical" href="https://nghuaruiwu.github.io/2020/08/22/CS/CS_Hexo+Github%E5%BB%BA%E7%AB%99%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="https://nghuaruiwu.github.io/2020/08/22/Math/%E6%95%B0%E5%AD%A6%E5%8F%98%E6%8D%A2(1)%20%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2/">
 
 
 <script class="page-configurations">
@@ -151,7 +152,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Github-%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">Github 设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="nav-number">2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-%E5%AE%89%E8%A3%85%E5%8F%8A%E5%91%BD%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">Hexo 安装及命令</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%8F%98%E6%8D%A2-1-%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2"><span class="nav-number">1.</span> <span class="nav-text">数学变换(1) 勒让德变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%8F%98%E6%8D%A2"><span class="nav-number">1.1.</span> <span class="nav-text">数学变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2%E7%9A%84%E5%BC%95%E5%85%A5"><span class="nav-number">1.2.</span> <span class="nav-text">勒让德变换的引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">1.3.</span> <span class="nav-text">参考文献</span></a></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -164,16 +165,16 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -209,7 +210,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://nghuaruiwu.github.io/2020/08/22/CS/CS_Hexo+Github%E5%BB%BA%E7%AB%99%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://nghuaruiwu.github.io/2020/08/22/Math/%E6%95%B0%E5%AD%A6%E5%8F%98%E6%8D%A2(1)%20%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -236,7 +237,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-08-22 16:26:59 / Modified: 21:16:02" itemprop="dateCreated datePublished" datetime="2020-08-22T16:26:59+08:00">2020-08-22</time>
+              <time title="Created: 2020-08-22 16:26:59 / Modified: 21:39:10" itemprop="dateCreated datePublished" datetime="2020-08-22T16:26:59+08:00">2020-08-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,7 +245,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CS-notes/" itemprop="url" rel="index"><span itemprop="name">CS notes</span></a>
+                  <a href="/categories/Math-notes/" itemprop="url" rel="index"><span itemprop="name">Math notes</span></a>
                 </span>
             </span>
 
@@ -257,46 +258,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Github-设置"><a href="#Github-设置" class="headerlink" title="Github 设置"></a>Github 设置</h1><ul>
-<li>仓库名应为： [username].github.io</li>
-<li>需确认git版本。由于所用git为1.9x版，在后续安装中费了不少时间</li>
-</ul>
-<h1 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h1><ul>
-<li>官网下载直接安装： <a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></li>
-<li>node -v; npm -v检测是否安装成功</li>
-</ul>
-<h1 id="Hexo-安装及命令"><a href="#Hexo-安装及命令" class="headerlink" title="Hexo 安装及命令"></a>Hexo 安装及命令</h1><ul>
-<li><p>安装hexo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化博客：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>hexo 命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo new sitename</span><br><span class="line">hexo n <span class="string">&quot;blog_name&quot;</span></span><br><span class="line">hexo clean </span><br><span class="line">hexo g <span class="comment"># generate</span></span><br><span class="line">hexo server <span class="comment"># localhost:4000</span></span><br><span class="line">hexo d <span class="comment"># deploy</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除文章：1) 直接在sources/_posts 删除对应的文章；2)在该文件夹下运行 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-</li>
-</ul>
-<p><strong>参考资料</strong></p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">https://zhuanlan.zhihu.com/p/26625249</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">https://zhuanlan.zhihu.com/p/35668237</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://nfwcap.github.io/2018/11/05/Hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97I%EF%BC%9A%E5%8F%91%E5%B8%83-%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0/">https://nfwcap.github.io/2018/11/05/Hexo%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97I%EF%BC%9A%E5%8F%91%E5%B8%83-%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0/</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/29808864">https://www.zhihu.com/question/29808864</a></p>
-</li>
-</ul>
+        <h1 id="数学变换-1-勒让德变换"><a href="#数学变换-1-勒让德变换" class="headerlink" title="数学变换(1) 勒让德变换"></a>数学变换(1) 勒让德变换</h1><h2 id="数学变换"><a href="#数学变换" class="headerlink" title="数学变换"></a>数学变换</h2><p>在物理学中，经常使用数学变换来重新编码信息，如勒让德变换/傅里叶变换/拉普拉斯变换等。这些变换为人们提供了认识世界的新视角，为各类物理问题的处理提供了便利。<br>本系列将分别介绍上述三种数学变换。本节将介绍<strong>勒让德变换(Legendre Transform)</strong>.</p>
+<h2 id="勒让德变换的引入"><a href="#勒让德变换的引入" class="headerlink" title="勒让德变换的引入"></a>勒让德变换的引入</h2><p>对于给定的函数$F(x)$，如果满足以下两个条件则可以通过勒让德变换提供更好的信息表达：(a) 函数严格为凸（即其二阶导为正）且足够光滑；(b) 其一阶导数$dF/dx$能更直观地表达物理概念或更易于测量/控制。<br><img src="https://upload-images.jianshu.io/upload_images/119952-740aa43a49994a05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Fig. 1. Legendre Transform [1]"></p>
+<p>用$s(x)$表示其一阶导数：<br>$$<br>s(x) \equiv \frac{dF(x)}{dx}  \tag{1}<br>$$<br>构造一个新的函数$G(s)$，使得<br>$$<br>\frac{dG(s)}{ds}=x(s) \tag{2}<br>$$<br>则满足：<br>$$<br> sx = G(s) + F(x) \tag{3}<br>$$<br>$F(x)$和$G(s)$构成一组勒让德变换对。<br>图1提供了(3)式的几何解释。$G(s)$表示了$F(x)$在$x$处的切线与y轴的负截距。<br>需要注意以下几点：</p>
+<ol>
+<li>(3)式中的$x$和$s$是通过(1)式和(2)式相互联系的，两者只有1个是独立的，实际上(3)式可以拆成两个式子：<br>$$<br>sx(s) = G(s) + F(x(s)) \tag{4}<br>$$</li>
+</ol>
+<p>$$<br>s(x)x = G(s(x)) + F(x) \tag{5}<br>$$</p>
+<p> 即分别在$x$表象和$s$表象下成立。<br>2） 勒让德变换对存在对称性。若$F(x)$为凸，则其勒让德变换$G(s)$也为凸。<br>3）极值点的性质。$F(x_{\rm ext})+G(0)=0, F(0)+G(s_{\rm ext})=0$.  </p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] Zia, R. K., Redish, E. F., &amp; McKay, S. R. (2009). <strong>Making sense of the Legendre transform</strong>. <em>American Journal of Physics</em>, 77(7), 614-622.</p>
 
     </div>
 
@@ -306,12 +276,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/web/" rel="tag"># web</a>
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/%E6%95%B0%E5%AD%A6%E5%8F%98%E6%8D%A2/" rel="tag"># 数学变换</a>
           </div>
 
         
 
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/08/22/CS/Hexo+Github%E5%BB%BA%E7%AB%99%E7%AC%94%E8%AE%B0/" rel="next" title="Hexo+Github建站笔记">
+                  Hexo+Github建站笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
   
